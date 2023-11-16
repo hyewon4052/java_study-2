@@ -1,6 +1,10 @@
 import java.util.Scanner;
 
 public class RSPGame {
+	
+	public static final int 가위 = 1;
+	public static final int 바위 = 2;
+	public static final int 보 = 3;
 
 	public static void main(String[] args) {
 		int com, you;
@@ -88,18 +92,53 @@ public class RSPGame {
 //				break;
 //		}	//you
 			
+//			System.out.print("컴퓨터 : " + print(com));
+//			System.out.println("사용자 : " + print(you));
+//			
+//			if ((you==가위 && com ==보) || (you==바위 && com ==가위) || (you == 보 && com==바위) ) {
+//				System.out.println("사용자가 이겼습니다.");
+//			}
+//			else if (you==com) {
+//				System.out.println("비겼습니다.");
+//			}
+//			else {
+//				System.out.println("사용자가 졌습니다.");
+//			}
+
+			// 상급자 코스
 			System.out.print("컴퓨터 : " + print(com));
 			System.out.println("사용자 : " + print(you));
+//			
+//			switch (you-com) {
+//				case 1 : 
+//					System.out.println("사용자가 이겼습니다.");
+//					break;
+//				case -2 : 
+//					System.out.println("사용자가 이겼습니다.");
+//					break;
+//				case -1 :
+//					System.out.println("컴퓨터가 이겼습니다.");
+//					break;
+//				case 2 :
+//					System.out.println("컴퓨터가 이겼습니다.");
+//					break;
+//				case 0 :
+//					System.out.println("비겼습니다.");
+//					break;
+//			} 	//switch
 			
-			if ((you==1 && com ==3) || (you==1 && com ==1) || (you == 3 && com==2) ) {
+			
+			switch ((you-com+3)%3) {
+			case 1 : 
 				System.out.println("사용자가 이겼습니다.");
-			}
-			else if (you==com) {
+				break;
+			case 2 :
+				System.out.println("컴퓨터가 이겼습니다.");
+				break;
+			case 0 :
 				System.out.println("비겼습니다.");
-			}
-			else {
-				System.out.println("사용자가 졌습니다.");
-			}
+				break;
+		} 	//switch
 			
 			
 			System.out.print("계속 하시겠습니까? (y or n)");
@@ -109,6 +148,7 @@ public class RSPGame {
 				break;
 			}
 		} // while
+			
 		
 		
 	}// main
